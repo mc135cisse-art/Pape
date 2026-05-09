@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Order Confirmation — GROOMLY™</title>
+</head>
+<body style="margin:0;padding:0;background-color:#f5f0e8;font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;color:#2d2416;">
+
+  <!-- WRAPPER -->
+  <table width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#f5f0e8;padding:40px 0;">
+    <tr>
+      <td align="center">
+        <table width="600" cellpadding="0" cellspacing="0" border="0" style="max-width:600px;width:100%;">
+
+          <!-- ====== HEADER ====== -->
+          <tr>
+            <td align="center" style="padding:40px 40px 30px;background:linear-gradient(135deg,#c9a84c 0%,#f0d080 50%,#c9a84c 100%);border-radius:16px 16px 0 0;">
+              <h1 style="margin:0;font-size:36px;font-weight:900;letter-spacing:4px;color:#fff;text-shadow:0 2px 8px rgba(0,0,0,0.15);">GROOMLY™</h1>
+              <p style="margin:8px 0 0;font-size:13px;letter-spacing:2px;color:rgba(255,255,255,0.9);text-transform:uppercase;">Premium Pet Furniture Protection</p>
+            </td>
+          </tr>
+
+          <!-- ====== ORDER CONFIRMED BANNER ====== -->
+          <tr>
+            <td style="background:#fff;padding:32px 40px 24px;border-left:1px solid rgba(201,168,76,0.2);border-right:1px solid rgba(201,168,76,0.2);">
+              <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                <tr>
+                  <td>
+                    <div style="background:linear-gradient(135deg,#f0faf0,#e8f5e8);border:1px solid rgba(76,175,80,0.3);border-radius:12px;padding:16px 20px;margin-bottom:28px;text-align:center;">
+                      <span style="font-size:24px;">✅</span>
+                      <p style="margin:6px 0 0;font-size:16px;font-weight:800;color:#2e7d32;">Order Confirmed!</p>
+                      <p style="margin:4px 0 0;font-size:13px;color:#5a7a5a;">Your payment was successfully processed.</p>
+                    </div>
+                    <h2 style="margin:0 0 6px;font-size:22px;font-weight:900;color:#2d2416;">Thank you, {{ order.customer.first_name }}! 🐾</h2>
+                    <p style="margin:0 0 20px;font-size:15px;color:#6b5a3e;line-height:1.7;">
+                      We're thrilled to have you as part of the <strong style="color:#a8852e;">GROOMLY™ family</strong>. Your order <strong>#{{ order.order_number }}</strong> has been received and is being prepared with care.
+                    </p>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <!-- ====== ORDER DETAILS ====== -->
+          <tr>
+            <td style="background:#faf7f2;padding:0 40px 24px;border-left:1px solid rgba(201,168,76,0.2);border-right:1px solid rgba(201,168,76,0.2);">
+              <h3 style="margin:0 0 16px;font-size:13px;font-weight:800;text-transform:uppercase;letter-spacing:2px;color:#a8852e;padding-top:24px;border-top:1px solid rgba(201,168,76,0.2);">Your Order Summary</h3>
+
+              {% for line_item in line_items %}
+              <table width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-bottom:12px;">
+                <tr>
+                  <td style="padding:12px;background:#fff;border:1px solid rgba(201,168,76,0.2);border-radius:10px;">
+                    <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                      <tr>
+                        <td width="60">
+                          {% if line_item.image %}
+                          <img src="{{ line_item.image | img_url: '60x60', crop: 'center' }}" width="52" height="52" alt="{{ line_item.title }}" style="border-radius:8px;display:block;border:1px solid rgba(201,168,76,0.2);">
+                          {% else %}
+                          <div style="width:52px;height:52px;background:linear-gradient(135deg,#f5f0e8,#ede8dc);border-radius:8px;border:1px solid rgba(201,168,76,0.2);"></div>
+                          {% endif %}
+                        </td>
+                        <td style="padding-left:14px;">
+                          <p style="margin:0 0 2px;font-size:14px;font-weight:700;color:#2d2416;">{{ line_item.title }}</p>
+                          {% if line_item.variant_title != 'Default Title' %}
+                          <p style="margin:0 0 4px;font-size:12px;color:#9c8b72;">{{ line_item.variant_title }}</p>
+                          {% endif %}
+                          <p style="margin:0;font-size:12px;color:#9c8b72;">Qty: {{ line_item.quantity }}</p>
+                        </td>
+                        <td align="right" style="vertical-align:top;">
+                          <p style="margin:0;font-size:15px;font-weight:800;color:#a8852e;">{{ line_item.line_price | money }}</p>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+              </table>
+              {% endfor %}
+
+              <!-- Totals -->
+              <table width="100%" cellpadding="0" cellspacing="0" border="0" style="border-top:1px solid rgba(201,168,76,0.2);margin-top:8px;padding-top:12px;">
+                <tr>
+                  <td style="padding:4px 0;font-size:14px;color:#6b5a3e;">Subtotal</td>
+                  <td align="right" style="padding:4px 0;font-size:14px;color:#6b5a3e;">{{ subtotal_price | money }}</td>
+                </tr>
+                {% if delivery_method == "pick-up" %}
+                <tr>
+                  <td style="padding:4px 0;font-size:14px;color:#6b5a3e;">Shipping</td>
+                  <td align="right" style="padding:4px 0;font-size:14px;color:#2e7d32;font-weight:700;">Free pick-up</td>
+                </tr>
+                {% else %}
+                <tr>
+                  <td style="padding:4px 0;font-size:14px;color:#6b5a3e;">Shipping</td>
+                  <td align="right" style="padding:4px 0;font-size:14px;color:#6b5a3e;">{{ shipping_price | money }}</td>
+                </tr>
+                {% endif %}
+                {% for discount_application in discount_applications %}
+                <tr>
+                  <td style="padding:4px 0;font-size:14px;color:#2e7d32;">🎁 Discount ({{ discount_application.title }})</td>
+                  <td align="right" style="padding:4px 0;font-size:14px;color:#2e7d32;font-weight:700;">-{{ discount_application.total_allocated_amount | money }}</td>
+                </tr>
+                {% endfor %}
+                <tr>
+                  <td style="padding:12px 0 4px;font-size:17px;font-weight:900;color:#2d2416;border-top:2px solid rgba(201,168,76,0.3);">Total</td>
+                  <td align="right" style="padding:12px 0 4px;font-size:19px;font-weight:900;color:#a8852e;border-top:2px solid rgba(201,168,76,0.3);">{{ total_price | money }}</td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <!-- ====== SHIPPING ADDRESS ====== -->
+          <tr>
+            <td style="background:#fff;padding:24px 40px;border-left:1px solid rgba(201,168,76,0.2);border-right:1px solid rgba(201,168,76,0.2);">
+              <h3 style="margin:0 0 12px;font-size:13px;font-weight:800;text-transform:uppercase;letter-spacing:2px;color:#a8852e;">Shipping To</h3>
+              <p style="margin:0;font-size:14px;color:#6b5a3e;line-height:1.8;">
+                {{ shipping_address.name }}<br>
+                {{ shipping_address.address1 }}<br>
+                {% if shipping_address.address2 != blank %}{{ shipping_address.address2 }}<br>{% endif %}
+                {{ shipping_address.city }}, {{ shipping_address.province_code }} {{ shipping_address.zip }}<br>
+                {{ shipping_address.country }}
+              </p>
+            </td>
+          </tr>
+
+          <!-- ====== REASSURANCE BLOCK ====== -->
+          <tr>
+            <td style="background:#faf7f2;padding:28px 40px;border-left:1px solid rgba(201,168,76,0.2);border-right:1px solid rgba(201,168,76,0.2);">
+              <h3 style="margin:0 0 20px;font-size:13px;font-weight:800;text-transform:uppercase;letter-spacing:2px;color:#a8852e;">What Happens Next?</h3>
+              <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                <tr>
+                  <td style="padding:10px 0;border-bottom:1px solid rgba(201,168,76,0.15);">
+                    <table cellpadding="0" cellspacing="0" border="0">
+                      <tr>
+                        <td width="36" style="vertical-align:top;">
+                          <div style="width:28px;height:28px;background:linear-gradient(135deg,#c9a84c,#f0d080);border-radius:50%;text-align:center;line-height:28px;font-size:13px;font-weight:900;color:#fff;">1</div>
+                        </td>
+                        <td style="padding-left:12px;vertical-align:top;">
+                          <p style="margin:0;font-size:14px;font-weight:700;color:#2d2416;">Processing &amp; Quality Check</p>
+                          <p style="margin:4px 0 0;font-size:13px;color:#9c8b72;">Our team verifies your order within 24 hours.</p>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+                <tr>
+                  <td style="padding:10px 0;border-bottom:1px solid rgba(201,168,76,0.15);">
+                    <table cellpadding="0" cellspacing="0" border="0">
+                      <tr>
+                        <td width="36" style="vertical-align:top;">
+                          <div style="width:28px;height:28px;background:linear-gradient(135deg,#c9a84c,#f0d080);border-radius:50%;text-align:center;line-height:28px;font-size:13px;font-weight:900;color:#fff;">2</div>
+                        </td>
+                        <td style="padding-left:12px;vertical-align:top;">
+                          <p style="margin:0;font-size:14px;font-weight:700;color:#2d2416;">Shipped &amp; Tracking Sent</p>
+                          <p style="margin:4px 0 0;font-size:13px;color:#9c8b72;">You'll receive your tracking number by email as soon as your package is dispatched.</p>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+                <tr>
+                  <td style="padding:10px 0;">
+                    <table cellpadding="0" cellspacing="0" border="0">
+                      <tr>
+                        <td width="36" style="vertical-align:top;">
+                          <div style="width:28px;height:28px;background:linear-gradient(135deg,#c9a84c,#f0d080);border-radius:50%;text-align:center;line-height:28px;font-size:13px;font-weight:900;color:#fff;">3</div>
+                        </td>
+                        <td style="padding-left:12px;vertical-align:top;">
+                          <p style="margin:0;font-size:14px;font-weight:700;color:#2d2416;">Delivered to Your Door 🐾</p>
+                          <p style="margin:4px 0 0;font-size:13px;color:#9c8b72;">Estimated delivery: <strong style="color:#a8852e;">7–14 business days</strong>. Premium packaging included.</p>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <!-- ====== CONTACT / SUPPORT ====== -->
+          <tr>
+            <td style="background:#fff;padding:28px 40px;border-left:1px solid rgba(201,168,76,0.2);border-right:1px solid rgba(201,168,76,0.2);">
+              <h3 style="margin:0 0 8px;font-size:13px;font-weight:800;text-transform:uppercase;letter-spacing:2px;color:#a8852e;">Need Help? We're Here 24/7</h3>
+              <p style="margin:0 0 18px;font-size:14px;color:#6b5a3e;line-height:1.7;">Questions about your order? Want to know where your package is? Just reach out — we respond within minutes.</p>
+              <table cellpadding="0" cellspacing="0" border="0">
+                <tr>
+                  <td style="padding-right:12px;">
+                    <a href="mailto:contact@groomlyau.eu" style="display:inline-block;background:linear-gradient(135deg,#c9a84c,#f0d080);color:#fff;font-size:13px;font-weight:800;text-transform:uppercase;letter-spacing:1px;text-decoration:none;padding:12px 22px;border-radius:50px;box-shadow:0 4px 16px rgba(201,168,76,0.3);">✉️ Email Support</a>
+                  </td>
+                  <td>
+                    <a href="https://groomlyau.eu" style="display:inline-block;background:#faf7f2;border:1px solid rgba(201,168,76,0.3);color:#a8852e;font-size:13px;font-weight:800;text-transform:uppercase;letter-spacing:1px;text-decoration:none;padding:12px 22px;border-radius:50px;">🌐 Visit Our Store</a>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <!-- ====== LOYALTY DISCOUNT ====== -->
+          <tr>
+            <td style="background:linear-gradient(135deg,#fffdf5,#faf5e4);padding:28px 40px;border:1px solid rgba(201,168,76,0.3);border-top:none;">
+              <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                <tr>
+                  <td align="center">
+                    <p style="margin:0 0 6px;font-size:20px;">🎁</p>
+                    <h3 style="margin:0 0 8px;font-size:18px;font-weight:900;color:#2d2416;">A Gift for You!</h3>
+                    <p style="margin:0 0 16px;font-size:14px;color:#6b5a3e;line-height:1.7;">As a valued GROOMLY™ customer, enjoy <strong style="color:#a8852e;">10% off</strong> your next order.</p>
+                    <div style="background:#fff;border:2px dashed #c9a84c;border-radius:12px;padding:14px 28px;display:inline-block;margin-bottom:14px;">
+                      <p style="margin:0;font-size:24px;font-weight:900;letter-spacing:3px;color:#a8852e;">GROOMLY10</p>
+                    </div>
+                    <p style="margin:0;font-size:12px;color:#9c8b72;">Valid on your next purchase · No minimum spend · Single use</p>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <!-- ====== FOOTER ====== -->
+          <tr>
+            <td style="background:#ede8dc;padding:28px 40px;border-radius:0 0 16px 16px;border:1px solid rgba(201,168,76,0.2);border-top:none;" align="center">
+              <p style="margin:0 0 8px;font-size:16px;font-weight:900;letter-spacing:3px;color:#a8852e;">GROOMLY™</p>
+              <p style="margin:0 0 12px;font-size:12px;color:#9c8b72;letter-spacing:1px;text-transform:uppercase;">Premium Pet Furniture Protection · Australia</p>
+              <p style="margin:0 0 16px;font-size:12px;color:#9c8b72;">
+                <a href="{{ shop.url }}/policies/privacy-policy" style="color:#9c8b72;text-decoration:none;">Privacy Policy</a>
+                &nbsp;·&nbsp;
+                <a href="{{ shop.url }}/policies/refund-policy" style="color:#9c8b72;text-decoration:none;">Refund Policy</a>
+                &nbsp;·&nbsp;
+                <a href="{{ shop.url }}/policies/shipping-policy" style="color:#9c8b72;text-decoration:none;">Shipping Info</a>
+              </p>
+              <p style="margin:0;font-size:11px;color:#c4b49a;">
+                You're receiving this email because you placed an order at <a href="{{ shop.url }}" style="color:#a8852e;text-decoration:none;">{{ shop.domain }}</a>.<br>
+                © {{ 'now' | date: "%Y" }} GROOMLY™. All rights reserved.
+              </p>
+            </td>
+          </tr>
+
+        </table>
+      </td>
+    </tr>
+  </table>
+
+</body>
+</html>
