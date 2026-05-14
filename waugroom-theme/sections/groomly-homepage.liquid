@@ -1,0 +1,335 @@
+{% comment %} WAUGROOM™ STRONA GŁÓWNA — Polska Wersja {% endcomment %}
+
+{% assign sofa_handle = 'waugroom-ochraniacz-na-kanape-premium' %}
+{% assign glove_handle = 'waugroom-rekawica-do-pielegnacji-psa' %}
+{% assign sofa_url = '/products/' | append: sofa_handle %}
+{% assign glove_url = '/products/' | append: glove_handle %}
+
+{% assign sofa_product = all_products[sofa_handle] %}
+{% assign glove_product = all_products[glove_handle] %}
+{% if sofa_product.handle != sofa_handle %}
+  {% assign sofa_url = '/collections/all' %}
+{% endif %}
+{% if glove_product.handle != glove_handle %}
+  {% assign glove_url = '/collections/all' %}
+{% endif %}
+
+<section class="g-hero">
+  <div class="g-hero-content">
+    <div class="g-hero-badge">🐾 #1 Marka dla Właścicieli Psów w Polsce</div>
+    <h1 class="g-hero-title">
+      Twoja Kanapa Zasługuje na<br>
+      <span class="g-hero-gold">Ochronę.</span><br>
+      Twój Pies Zasługuje na<br>
+      <span class="g-hero-gold">Wygodę.</span>
+    </h1>
+    <p class="g-hero-sub">Premium akcesoria dla psów stworzone specjalnie dla polskich domów. Zaufało nam ponad 5 000 zadowolonych właścicieli psów.</p>
+    <div class="g-hero-stars">
+      <span>⭐⭐⭐⭐⭐</span>
+      <span class="g-hero-rating">4.8/5 — Ponad 120 Zweryfikowanych Opinii</span>
+    </div>
+    <div class="g-hero-buttons">
+      <a href="/collections/all" class="g-btn-primary">Kup Teraz — Do 50% Taniej 🔥</a>
+      <a href="/pages/faq" class="g-btn-secondary">Jak To Działa →</a>
+    </div>
+    <div class="g-hero-trust">
+      <span>✅ Dostawa 5–10 Dni Roboczych</span>
+      <span>✅ 30-Dniowa Gwarancja</span>
+      <span>✅ Bezpieczna Płatność</span>
+    </div>
+  </div>
+</section>
+
+<section class="g-trust-bar">
+  <div class="g-trust-bar-inner">
+    <div class="g-trust-item"><span class="g-trust-icon">🚚</span><div><strong>Szybka Dostawa</strong><span>5–10 dni roboczych</span></div></div>
+    <div class="g-trust-divider"></div>
+    <div class="g-trust-item"><span class="g-trust-icon">🛡️</span><div><strong>Zwrot w 30 Dni</strong><span>Zero ryzyka — gwarantowane</span></div></div>
+    <div class="g-trust-divider"></div>
+    <div class="g-trust-item"><span class="g-trust-icon">⭐</span><div><strong>Ocena 4.8 / 5</strong><span>5 000+ zadowolonych klientów</span></div></div>
+    <div class="g-trust-divider"></div>
+    <div class="g-trust-item"><span class="g-trust-icon">🔒</span><div><strong>100% Bezpieczna Kasa</strong><span>Płatności szyfrowane SSL</span></div></div>
+  </div>
+</section>
+
+<section class="g-problem-section">
+  <div class="g-container">
+    <div class="g-section-badge">Problem Każdego Właściciela Psa</div>
+    <h2 class="g-section-title">Czy To Brzmi Znajomo? 😔</h2>
+    <div class="g-problem-grid">
+      <div class="g-problem-card"><span class="g-problem-icon">😭</span><p>Twoja piękna <strong>kanapa za 3 000 zł</strong> pokryta jest psią sierścią, zadrapaniami i błotem</p></div>
+      <div class="g-problem-card"><span class="g-problem-icon">😤</span><p>Próbowałeś <strong>tanich pokrowców</strong> które się zsuwają, rozciągają i wyglądają okropnie</p></div>
+      <div class="g-problem-card"><span class="g-problem-icon">💸</span><p>Wydajesz <strong>setki złotych</strong> rocznie na czyszczenie mebli</p></div>
+      <div class="g-problem-card"><span class="g-problem-icon">😞</span><p>Czujesz się <strong>winny</strong> kiedy mówisz psu żeby schodził z kanapy</p></div>
+    </div>
+    <div class="g-solution-arrow"><span>Rozwiązanie WauGroom™ ↓</span></div>
+  </div>
+</section>
+
+<section class="g-products-section">
+  <div class="g-container">
+    <div class="g-section-badge">🔥 Bestsellery</div>
+    <h2 class="g-section-title">Nasza <span class="g-gold-text">Premium</span> Kolekcja</h2>
+    <p class="g-section-sub">Zaprojektowane specjalnie dla polskich właścicieli psów, którzy nie idą na kompromis</p>
+    <div class="g-products-grid">
+
+      <!-- OCHRANIACZ NA KANAPĘ -->
+      <div class="g-product-card">
+        <div class="g-product-badge-wrap">
+          <span class="g-badge-sale">PROMOCJA</span>
+          <span class="g-badge-hot">🔥 Bestseller</span>
+        </div>
+        <a href="{{ sofa_url }}">
+          <div class="g-product-img-wrap"><div class="g-product-img-placeholder">🛋️</div></div>
+        </a>
+        <div class="g-product-info">
+          <p class="g-product-brand">WAUGROOM™</p>
+          <h3 class="g-product-title">Ochraniacz na Kanapę Premium</h3>
+          <div class="g-product-stars">⭐⭐⭐⭐⭐ <span>(120 opinii)</span></div>
+          <div class="g-product-price">
+            <span class="g-price-sale">Od 149 zł</span>
+            <span class="g-price-original">299 zł</span>
+          </div>
+          <p class="g-product-desc">Wodoodporny • Antyzdrapkowy • Do Prania w Pralce • System AntyPoślizgowy™</p>
+          <a href="{{ sofa_url }}" class="g-product-btn">Kup Teraz 🔥</a>
+          <p class="g-product-urgency">⚡ Zostało tylko 7 sztuk!</p>
+        </div>
+      </div>
+
+      <!-- RĘKAWICA DO PIELĘGNACJI -->
+      <div class="g-product-card">
+        <div class="g-product-badge-wrap">
+          <span class="g-badge-sale">PROMOCJA</span>
+          <span class="g-badge-new">✨ Must Have</span>
+        </div>
+        <a href="{{ glove_url }}">
+          <div class="g-product-img-wrap"><div class="g-product-img-placeholder">🧤</div></div>
+        </a>
+        <div class="g-product-info">
+          <p class="g-product-brand">WAUGROOM™</p>
+          <h3 class="g-product-title">Rękawica do Pielęgnacji Psa</h3>
+          <div class="g-product-stars">⭐⭐⭐⭐⭐ <span>(120 opinii)</span></div>
+          <div class="g-product-price">
+            <span class="g-price-sale">89 zł</span>
+            <span class="g-price-original">179 zł</span>
+          </div>
+          <p class="g-product-desc">Działa na Psy i Koty • Do Każdego Rodzaju Sierści • Jeden Rozmiar</p>
+          <a href="{{ glove_url }}" class="g-product-btn">Kup Teraz 🔥</a>
+          <p class="g-product-urgency">⚡ Ograniczony stan magazynowy!</p>
+        </div>
+      </div>
+
+      <!-- ZESTAW -->
+      <div class="g-product-card g-bundle-card">
+        <div class="g-product-badge-wrap"><span class="g-badge-bundle">👑 NAJLEPSZA WARTOŚĆ</span></div>
+        <div class="g-bundle-content">
+          <div class="g-bundle-icons">🛋️ + 🧤</div>
+          <p class="g-product-brand">WAUGROOM™</p>
+          <h3 class="g-product-title">Kompletny Zestaw</h3>
+          <p class="g-bundle-desc">Zdobądź ZARÓWNO Ochraniacz na Kanapę JAK I Rękawicę do Pielęgnacji w niepowtarzalnej cenie</p>
+          <div class="g-bundle-includes">
+            <p>✅ WauGroom™ Ochraniacz na Kanapę Premium</p>
+            <p>✅ WauGroom™ Rękawica do Pielęgnacji Psa</p>
+            <p>✅ Dostawa 5–10 Dni Roboczych</p>
+            <p>✅ 30-Dniowa Gwarancja Zwrotu Pieniędzy</p>
+          </div>
+          <div class="g-product-price">
+            <span class="g-price-sale">Od 199 zł</span>
+            <span class="g-price-original">478 zł</span>
+          </div>
+          <a href="/collections/all" class="g-product-btn g-bundle-btn">👑 Kup Zestaw — Najlepsza Cena</a>
+          <p class="g-product-urgency">🎁 Użyj kodu WAUGROOM10 na dodatkowe 10% rabatu</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="g-why-section">
+  <div class="g-container">
+    <div class="g-section-badge">Dlaczego My</div>
+    <h2 class="g-section-title">Dlaczego <span class="g-gold-text">5 000+</span> Polaków Ufa WauGroom™</h2>
+    <div class="g-why-grid">
+      <div class="g-why-item"><span class="g-why-icon">🏆</span><h4>Premium Jakość</h4><p>Każdy produkt jest rygorystycznie testowany pod kątem najwyższych standardów trwałości i komfortu</p></div>
+      <div class="g-why-item"><span class="g-why-icon">🇵🇱</span><h4>Stworzone dla Polski</h4><p>Zaprojektowane specjalnie dla polskich domów i unikalnego stylu życia z psem</p></div>
+      <div class="g-why-item"><span class="g-why-icon">⚡</span><h4>Szybka Dostawa</h4><p>Twoje zamówienie dotrze w zaledwie 5 do 10 dni roboczych do całej Polski</p></div>
+      <div class="g-why-item"><span class="g-why-icon">❤️</span><h4>Bezpieczne dla Psa i Rodziny</h4><p>100% bezpieczne materiały dla zwierząt. Bez szkodliwych chemikaliów. Bezpieczne dla całej rodziny</p></div>
+      <div class="g-why-item"><span class="g-why-icon">🛡️</span><h4>Zakup Bez Ryzyka</h4><p>30-dniowa gwarancja zwrotu pieniędzy. Niezadowolony? Pełny zwrot, bez pytań</p></div>
+      <div class="g-why-item"><span class="g-why-icon">💰</span><h4>Oszczędź Tysiące</h4><p>Jeden pokrowiec WauGroom™ oszczędzi Ci tysiące złotych na wymianie mebli</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="g-reviews-section">
+  <div class="g-container">
+    <div class="g-section-badge">⭐ Zweryfikowane Opinie Klientów</div>
+    <h2 class="g-section-title">Co Mówią Polscy<br><span class="g-gold-text">Właściciele Psów</span></h2>
+    <div class="g-reviews-grid">
+      <div class="g-review-card">
+        <div class="g-review-stars">⭐⭐⭐⭐⭐</div>
+        <p class="g-review-text">Szczerze, trochę się wahałam, ale to jest niesamowite. Mój golden retriever Bruno skacze na kanapę cały dzień i nie ma na niej ani jednego zadrapania ani sierści. Najlepsza rzecz jaką kupiłam do domu od lat, bez żadnych wątpliwości.</p>
+        <div class="g-review-author"><span class="g-review-avatar">K</span><div><strong>Karolina M.</strong><span>Warszawa 🇵🇱</span></div></div>
+        <div class="g-review-meta"><span class="g-review-verified">✅ Zweryfikowany Kupujący</span><span class="g-review-date">3 tygodnie temu</span></div>
+      </div>
+      <div class="g-review-card">
+        <div class="g-review-stars">⭐⭐⭐⭐⭐</div>
+        <p class="g-review-text">Przez lata próbowaliśmy wielu pokrowców na sofę i zawsze się zsuwały lub wyglądały okropnie. Ten naprawdę trzyma się na miejscu i moi goście nawet nie zauważają, że tam jest. W końcu coś, co naprawdę działa!</p>
+        <div class="g-review-author"><span class="g-review-avatar">P</span><div><strong>Piotr W.</strong><span>Kraków 🇵🇱</span></div></div>
+        <div class="g-review-meta"><span class="g-review-verified">✅ Zweryfikowany Kupujący</span><span class="g-review-date">1 miesiąc temu</span></div>
+      </div>
+      <div class="g-review-card">
+        <div class="g-review-stars">⭐⭐⭐⭐⭐</div>
+        <p class="g-review-text">Rękawica do pielęgnacji to absolutna rewolucja. Mój labrador zawsze nienawidził szczotkowania, ale teraz macha ogonem kiedy wychodzę z rękawicą. Ilość sierści jaką zbiera jest niesamowita. Używam jej codziennie i cały dom jest znacznie czystszy.</p>
+        <div class="g-review-author"><span class="g-review-avatar">A</span><div><strong>Anna R.</strong><span>Wrocław 🇵🇱</span></div></div>
+        <div class="g-review-meta"><span class="g-review-verified">✅ Zweryfikowany Kupujący</span><span class="g-review-date">2 tygodnie temu</span></div>
+      </div>
+      <div class="g-review-card">
+        <div class="g-review-stars">⭐⭐⭐⭐⭐</div>
+        <p class="g-review-text">Zamówiłem duży rozmiar na trzysofową kanapę i pasuje idealnie. Nasze dwa owczarki niszczyły każdy pokrowiec w ciągu tygodni, ale ten po dwóch miesiącach nadal wygląda jak nowy. Funkcja wodoodporności jest wybawieniem po błotnistych spacerach.</p>
+        <div class="g-review-author"><span class="g-review-avatar">M</span><div><strong>Marek B.</strong><span>Gdańsk 🇵🇱</span></div></div>
+        <div class="g-review-meta"><span class="g-review-verified">✅ Zweryfikowany Kupujący</span><span class="g-review-date">5 tygodni temu</span></div>
+      </div>
+      <div class="g-review-card">
+        <div class="g-review-stars">⭐⭐⭐⭐⭐</div>
+        <p class="g-review-text">Kupiłam zestaw i było warto każdego grosza. Rękawica do pielęgnacji usuwa więcej sierści w pięć minut niż kiedyś w pół godziny szczotkowania. Mój owczarek alzacki teraz to lubi, czego się zupełnie nie spodziewałam.</p>
+        <div class="g-review-author"><span class="g-review-avatar">O</span><div><strong>Olga S.</strong><span>Poznań 🇵🇱</span></div></div>
+        <div class="g-review-meta"><span class="g-review-verified">✅ Zweryfikowany Kupujący</span><span class="g-review-date">3 tygodnie temu</span></div>
+      </div>
+      <div class="g-review-card">
+        <div class="g-review-stars">⭐⭐⭐⭐⭐</div>
+        <p class="g-review-text">Szybka dostawa, świetne opakowanie i produkt dokładnie taki jak opisany. Mój pies Max jest uzależniony od kanapy i ten pokrowiec ocalił moje nerwy. Pierze się też bardzo dobrze — wkładam do pralki i wychodzi idealny za każdym razem.</p>
+        <div class="g-review-author"><span class="g-review-avatar">T</span><div><strong>Tomasz P.</strong><span>Łódź 🇵🇱</span></div></div>
+        <div class="g-review-meta"><span class="g-review-verified">✅ Zweryfikowany Kupujący</span><span class="g-review-date">2 miesiące temu</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="g-cta-section">
+  <div class="g-container">
+    <div class="g-cta-box">
+      <h2 class="g-cta-title">Gotowy Chronić Swoją Kanapę? 🐾</h2>
+      <p class="g-cta-sub">Dołącz do 5 000+ polskich właścicieli psów, którzy wybrali WauGroom™</p>
+      <div class="g-cta-offer"><span>🎁 Użyj kodu <strong>WAUGROOM10</strong> na 10% rabatu na pierwsze zamówienie</span></div>
+      <a href="/collections/all" class="g-btn-primary g-cta-btn">Kup Teraz — Ograniczony Stan 🔥</a>
+      <div class="g-cta-trust">
+        <span>⚡ Dostawa 5–10 Dni</span>
+        <span>🛡️ Gwarancja 30 Dni</span>
+        <span>🔒 Bezpieczna Kasa</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+.g-container{max-width:1200px;margin:0 auto;padding:0 20px;}
+.g-gold-text{background:linear-gradient(135deg,#c9a84c,#a8852e);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.g-section-badge{display:inline-block;background:rgba(201,168,76,0.1);border:1px solid rgba(201,168,76,0.4);color:#a8852e;padding:6px 18px;border-radius:50px;font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:16px;}
+.g-section-title{font-size:clamp(1.8rem,4vw,2.8rem);font-weight:900;color:#2d2416 !important;line-height:1.2;margin-bottom:12px;}
+.g-section-sub{color:#6b5a3e !important;font-size:16px;margin-bottom:40px;}
+.g-hero{min-height:80vh;background:linear-gradient(135deg,#f5f0e8 0%,#ede8dc 50%,#e8dcc8 100%);display:flex;align-items:center;justify-content:center;text-align:center;padding:80px 20px;position:relative;overflow:hidden;}
+.g-hero::before{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:600px;height:600px;background:radial-gradient(circle,rgba(201,168,76,0.12) 0%,transparent 70%);border-radius:50%;animation:heroGlow 4s ease-in-out infinite;pointer-events:none;}
+@keyframes heroGlow{0%,100%{transform:translate(-50%,-50%) scale(1);}50%{transform:translate(-50%,-50%) scale(1.2);}}
+.g-hero-content{position:relative;z-index:2;max-width:700px;}
+.g-hero-badge{display:inline-block;background:linear-gradient(135deg,#c9a84c,#f0d080);color:#fff;padding:8px 20px;border-radius:50px;font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:1px;margin-bottom:24px;animation:badgePulse 2s ease-in-out infinite;}
+@keyframes badgePulse{0%,100%{box-shadow:0 0 0 0 rgba(201,168,76,0.4);}50%{box-shadow:0 0 0 12px rgba(201,168,76,0);}}
+.g-hero-title{font-size:clamp(2.2rem,6vw,4rem);font-weight:900;color:#2d2416 !important;line-height:1.15;margin-bottom:20px;}
+.g-hero-gold{background:linear-gradient(135deg,#c9a84c,#a8852e);background-size:200%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:goldShimmer 3s ease infinite;}
+.g-hero-sub{font-size:18px;color:#6b5a3e !important;margin-bottom:16px;line-height:1.6;}
+.g-hero-stars{display:flex;align-items:center;justify-content:center;gap:10px;margin-bottom:30px;font-size:14px;}
+.g-hero-rating{color:#9c8b72 !important;}
+.g-hero-buttons{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-bottom:24px;}
+.g-btn-primary{background:linear-gradient(135deg,#c9a84c 0%,#f0d080 50%,#c9a84c 100%);background-size:200%;animation:goldShimmer 3s ease infinite;color:#fff !important;font-weight:900;font-size:15px;letter-spacing:1px;text-transform:uppercase;padding:18px 36px;border-radius:50px;text-decoration:none;display:inline-block;box-shadow:0 6px 30px rgba(201,168,76,0.35);transition:all 0.3s ease;}
+.g-btn-primary:hover{transform:translateY(-3px);box-shadow:0 12px 40px rgba(201,168,76,0.5);}
+.g-btn-secondary{background:transparent;color:#a8852e !important;font-weight:700;font-size:15px;padding:18px 30px;border-radius:50px;border:2px solid rgba(201,168,76,0.5);text-decoration:none;display:inline-block;transition:all 0.3s ease;}
+.g-btn-secondary:hover{background:rgba(201,168,76,0.1);border-color:#c9a84c;}
+.g-hero-trust{display:flex;justify-content:center;gap:20px;flex-wrap:wrap;font-size:13px;color:#6b5a3e !important;font-weight:600;}
+.g-trust-bar{background:#ede8dc;border-top:1px solid rgba(201,168,76,0.2);border-bottom:1px solid rgba(201,168,76,0.2);padding:20px;}
+.g-trust-bar-inner{max-width:1000px;margin:0 auto;display:flex;justify-content:space-around;align-items:center;flex-wrap:wrap;gap:20px;}
+.g-trust-item{display:flex;align-items:center;gap:12px;}
+.g-trust-icon{font-size:28px;}
+.g-trust-item strong{display:block;color:#2d2416 !important;font-size:13px;font-weight:800;text-transform:uppercase;letter-spacing:0.5px;}
+.g-trust-item span{display:block;color:#9c8b72 !important;font-size:12px;}
+.g-trust-divider{width:1px;height:40px;background:rgba(201,168,76,0.2);}
+@media(max-width:768px){.g-trust-divider{display:none;}}
+.g-problem-section{padding:80px 20px;text-align:center;background:#f5f0e8;}
+.g-problem-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;max-width:700px;margin:40px auto 30px;}
+@media(max-width:600px){.g-problem-grid{grid-template-columns:1fr;}}
+.g-problem-card{background:#fff;border:1px solid rgba(230,57,70,0.15);border-radius:12px;padding:24px;transition:all 0.3s ease;}
+.g-problem-card:hover{border-color:rgba(230,57,70,0.4);transform:translateY(-4px);}
+.g-problem-icon{font-size:36px;display:block;margin-bottom:12px;}
+.g-problem-card p{color:#6b5a3e !important;font-size:14px;line-height:1.6;margin:0;}
+.g-problem-card strong{color:#e63946 !important;}
+.g-solution-arrow{margin-top:30px;font-size:18px;font-weight:800;color:#a8852e !important;animation:bounceDown 1.5s ease-in-out infinite;}
+@keyframes bounceDown{0%,100%{transform:translateY(0);}50%{transform:translateY(8px);}}
+.g-products-section{padding:80px 20px;background:#faf7f2;text-align:center;}
+.g-products-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:40px;}
+@media(max-width:900px){.g-products-grid{grid-template-columns:1fr;max-width:400px;margin:40px auto 0;}}
+.g-product-card{background:#fff;border:1px solid rgba(201,168,76,0.2);border-radius:16px;overflow:hidden;transition:all 0.4s ease;position:relative;text-align:left;}
+.g-product-card:hover{transform:translateY(-8px);border-color:rgba(201,168,76,0.5);box-shadow:0 20px 50px rgba(201,168,76,0.12);}
+.g-product-badge-wrap{position:absolute;top:12px;left:12px;display:flex;flex-direction:column;gap:6px;z-index:2;}
+.g-badge-sale{background:#e63946;color:white;font-size:11px;font-weight:900;padding:4px 10px;border-radius:20px;}
+.g-badge-hot,.g-badge-new{background:linear-gradient(135deg,#c9a84c,#f0d080);color:#fff;font-size:11px;font-weight:900;padding:4px 10px;border-radius:20px;}
+.g-badge-bundle{background:linear-gradient(135deg,#c9a84c,#f0d080);color:#fff;font-size:12px;font-weight:900;padding:6px 14px;border-radius:20px;}
+.g-product-img-wrap{height:200px;background:#f5f0e8;display:flex;align-items:center;justify-content:center;overflow:hidden;}
+.g-product-img-placeholder{font-size:80px;}
+.g-product-info{padding:20px;}
+.g-product-brand{font-size:11px;font-weight:800;color:#a8852e !important;letter-spacing:2px;text-transform:uppercase;margin:0 0 6px;}
+.g-product-title{font-size:18px;font-weight:800;color:#2d2416 !important;margin:0 0 8px;}
+.g-product-stars{font-size:13px;color:#9c8b72 !important;margin-bottom:10px;}
+.g-product-price{display:flex;align-items:center;gap:10px;margin-bottom:8px;}
+.g-price-sale{font-size:20px;font-weight:900;color:#a8852e !important;}
+.g-price-original{font-size:14px;color:#9c8b72 !important;text-decoration:line-through;}
+.g-product-desc{font-size:12px;color:#9c8b72 !important;margin-bottom:16px;}
+.g-product-btn{display:block;text-align:center;background:linear-gradient(135deg,#c9a84c,#f0d080);color:#fff !important;font-weight:900;font-size:13px;text-transform:uppercase;letter-spacing:1px;padding:14px;border-radius:50px;text-decoration:none;transition:all 0.3s ease;}
+.g-product-btn:hover{transform:translateY(-2px);box-shadow:0 8px 25px rgba(201,168,76,0.35);}
+.g-product-urgency{font-size:12px;color:#e63946 !important;font-weight:700;text-align:center;margin:10px 0 0;}
+.g-bundle-card{background:linear-gradient(135deg,#fffdf5,#faf5e4);border-color:rgba(201,168,76,0.4);}
+.g-bundle-content{padding:40px 20px 20px;text-align:center;}
+.g-bundle-icons{font-size:50px;margin-bottom:16px;}
+.g-bundle-desc{color:#6b5a3e !important;font-size:14px;margin-bottom:16px;line-height:1.6;}
+.g-bundle-includes{text-align:left;margin-bottom:20px;}
+.g-bundle-includes p{font-size:13px;color:#6b5a3e !important;margin:6px 0;}
+.g-bundle-btn{background:linear-gradient(135deg,#c9a84c,#f0d080,#c9a84c) !important;background-size:200% !important;animation:goldShimmer 3s ease infinite !important;color:#fff !important;}
+.g-why-section{padding:80px 20px;background:#ede8dc;text-align:center;}
+.g-why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:40px;}
+@media(max-width:768px){.g-why-grid{grid-template-columns:1fr;}}
+.g-why-item{background:#fff;border:1px solid rgba(201,168,76,0.15);border-radius:16px;padding:30px 20px;transition:all 0.3s ease;}
+.g-why-item:hover{border-color:rgba(201,168,76,0.4);transform:translateY(-4px);box-shadow:0 10px 30px rgba(201,168,76,0.08);}
+.g-why-icon{font-size:40px;display:block;margin-bottom:16px;}
+.g-why-item h4{color:#a8852e !important;font-size:16px;font-weight:800;margin:0 0 10px;text-transform:uppercase;letter-spacing:0.5px;}
+.g-why-item p{color:#6b5a3e !important;font-size:14px;line-height:1.6;margin:0;}
+.g-reviews-section{padding:80px 20px;background:#f5f0e8;text-align:center;}
+.g-reviews-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:40px;}
+@media(max-width:900px){.g-reviews-grid{grid-template-columns:1fr;}}
+.g-review-card{background:#fff;border:1px solid rgba(201,168,76,0.2);border-radius:16px;padding:24px;text-align:left;transition:all 0.3s ease;}
+.g-review-card:hover{border-color:rgba(201,168,76,0.4);transform:translateY(-4px);box-shadow:0 10px 30px rgba(201,168,76,0.08);}
+.g-review-stars{font-size:16px;margin-bottom:12px;}
+.g-review-text{color:#6b5a3e !important;font-size:14px;line-height:1.8;margin-bottom:16px;font-style:normal !important;quotes:none !important;}
+.g-review-text::before,.g-review-text::after{content:none !important;}
+.g-review-author{display:flex;align-items:center;gap:10px;margin-bottom:8px;}
+.g-review-avatar{width:38px;height:38px;background:linear-gradient(135deg,#c9a84c,#f0d080);color:#fff;font-weight:900;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:15px;flex-shrink:0;}
+.g-review-author strong{color:#2d2416 !important;font-size:14px;display:block;}
+.g-review-author span{color:#9c8b72 !important;font-size:12px;}
+.g-review-meta{display:flex;align-items:center;justify-content:space-between;}
+.g-review-verified{font-size:11px;color:#4caf50 !important;font-weight:700;}
+.g-review-date{font-size:11px;color:#9c8b72 !important;}
+.g-cta-section{padding:80px 20px;background:#ede8dc;text-align:center;}
+.g-cta-box{background:linear-gradient(135deg,#fffdf5,#faf5e4);border:1px solid rgba(201,168,76,0.4);border-radius:24px;padding:60px 40px;max-width:700px;margin:0 auto;box-shadow:0 20px 60px rgba(201,168,76,0.1);}
+.g-cta-title{font-size:clamp(1.8rem,4vw,2.5rem);font-weight:900;color:#2d2416 !important;margin-bottom:12px;}
+.g-cta-sub{color:#6b5a3e !important;font-size:16px;margin-bottom:24px;}
+.g-cta-offer{display:inline-block;background:rgba(201,168,76,0.1);border:1px dashed rgba(201,168,76,0.4);color:#a8852e !important;padding:12px 24px;border-radius:10px;font-size:15px;font-weight:700;margin-bottom:30px;}
+.g-cta-offer strong{color:#c9a84c !important;}
+.g-cta-btn{font-size:17px !important;padding:20px 50px !important;}
+.g-cta-trust{display:flex;justify-content:center;gap:20px;flex-wrap:wrap;font-size:13px;color:#9c8b72 !important;margin-top:20px;font-weight:600;}
+@keyframes goldShimmer{0%{background-position:0% 50%;}50%{background-position:100% 50%;}100%{background-position:0% 50%;}}
+</style>
+
+{% schema %}
+{
+  "name": "WauGroom Homepage",
+  "settings": [],
+  "presets": [{"name": "WauGroom Homepage"}]
+}
+{% endschema %}
